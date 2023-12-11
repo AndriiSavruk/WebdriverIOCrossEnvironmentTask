@@ -18,6 +18,10 @@ class LoginPage {
         return $('div[data-test="signin-error"]')
     }
 
+    get signUpLink () {
+        return $('a[data-test="signup"]')
+    }
+
     async login (username, password) {
         await this.inputUserName.setValue(username);
         await this.inputPassword.setValue(password);
@@ -34,6 +38,10 @@ class LoginPage {
 
     async clickOnBtnSignIn () {
         await this.btnSignIn.click();
+    }
+
+    async clickOnSignUpLink () {
+        await this.signUpLink.click();
     }
 
 }

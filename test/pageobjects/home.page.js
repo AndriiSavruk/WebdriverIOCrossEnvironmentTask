@@ -10,6 +10,10 @@ class HomePage {
         return $('div[data-test="sidenav-signout"]');
     }
 
+    get onboardingWindow () {
+        return $('div[data-test="user-onboarding-dialog-title"]');
+    }
+
     async clickOnLogout () {
         await this.logoutLink.click();
     }
