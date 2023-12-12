@@ -14,8 +14,32 @@ class HomePage {
         return $('div[data-test="user-onboarding-dialog-title"]');
     }
 
+    get bankAccountsLink () {
+        return $('a[data-test="sidenav-bankaccounts"]');
+    }
+
+    get userSettingsLink () {
+        return $('a[data-test="sidenav-user-settings"]');
+    }
+
+    get newTransactionBtn () {
+        return $('a[data-test="nav-top-new-transaction"]');
+    }
+
     async clickOnLogout () {
         await this.logoutLink.click();
+    }
+
+    async clickOnBankAccounts () {
+        await this.bankAccountsLink.click();
+    }
+
+    async clickOnMyAccount () {
+        await this.userSettingsLink.click();
+    }
+
+    async clickOnNewTransactionBtn () {
+        await this.newTransactionBtn.click();
     }
 }
 
