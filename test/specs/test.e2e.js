@@ -6,48 +6,11 @@ import BankAccountsPage from '../pageobjects/bankaccounts.page.js';
 import CreateBankAccountPage from '../pageobjects/createbankaccount.page.js';
 import UserSettingsPage from '../pageobjects/usersettings.page.js';
 import TransactionNewPage from '../pageobjects/transactionnew.page.js';
+import { randomUserName, randomPassword, randomFirstName, randomLastName, randomThreeSymbolsPassword, randomBankName, invalidBankName, randomBankRoutingNumber, invalidBankRoutingNumber, randomBankAccountNumber, invalidBankAccountNumber, invalidEmail, invalidPhoneNumber, randomAmount, randomDescription } from "./../helper/randomvars.js"
 
-const randomUserName = Math.random().toString(5).substring(2);
-const randomPassword = Math.random().toString(5).substring(2);
-const randomFirstName = Math.random().toString(5).substring(2);
-const randomLastName = Math.random().toString(5).substring(2);
-const randomThreeSymbolsPassword = generateRandomString(3);
-const randomBankName = generateRandomString(5);
-const invalidBankName = generateRandomString(4);
-const randomBankRoutingNumber = generateRandomNumbers(9);
-const invalidBankRoutingNumber = generateRandomNumbers(8);
-const randomBankAccountNumber = generateRandomNumbers(9);
-const invalidBankAccountNumber = generateRandomNumbers(8);
-const invalidEmail = generateRandomString(5) + '.gmail.com';
-const invalidPhoneNumber = generateRandomNumbers(3);
-const randomAmount = generateRandomNumbers(1);
-const randomDescription = generateRandomString(5);
 const userName = 'Tavares_Barrows';
 const userPassword = 's3cret';
 const userFirstName = 'Arely';
-const userCounterAgentName = 'Kaylin Homenick';
-
-function generateRandomString (length) {
-    let result = '';
-    const characters =
-      'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-    const charactersLength = characters.length;
-    for (let i = 0; i < length; i++) {
-      result += characters.charAt(Math.floor(Math.random() * charactersLength));
-    }
-    return result;
-  };
-
-  function generateRandomNumbers (length) {
-    let result = '';
-    const characters =
-      '0123456789';
-    const charactersLength = characters.length;
-    for (let i = 0; i < length; i++) {
-      result += characters.charAt(Math.floor(Math.random() * charactersLength));
-    }
-    return result;
-  };
 
 describe('Login block', () => {
     it('Test case #1-1 Login with valid credentials', async () => {
