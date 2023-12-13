@@ -12,6 +12,10 @@ const userName = 'Tavares_Barrows';
 const userPassword = 's3cret';
 const userFirstName = 'Arely';
 
+// const userName = process.env.USERNAME;
+// const userPassword = process.env.PASSWORD;
+// const userFirstName = process.env.FIRSTNAME;
+
 describe('Login block', () => {
     it('Test case #1-1 Login with valid credentials', async () => {
     // Precondition
