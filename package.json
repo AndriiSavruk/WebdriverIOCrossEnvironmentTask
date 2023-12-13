@@ -3,6 +3,7 @@
   "type": "module",
   "devDependencies": {
     "@faker-js/faker": "^8.3.1",
+    "@wdio/allure-reporter": "^8.24.12",
     "@wdio/cli": "^8.24.16",
     "@wdio/local-runner": "^8.24.12",
     "@wdio/mocha-framework": "^8.24.12",
@@ -15,6 +16,9 @@
     "test:firefox": "wdio run ./wdio.firefox.conf.js",
     "test:development": "cross-env NODE_ENV=development jest",
     "test:production": "cross-env NODE_ENV=production jest",
-    "test:sample": "cross-env NODE_ENV=development wdio run ./wdio.conf.js"
+    "test:sample": "cross-env NODE_ENV=production npx wdio run ./wdio.conf.js"
+  },
+  "dependencies": {
+    "allure-commandline": "^2.25.0"
   }
 }
