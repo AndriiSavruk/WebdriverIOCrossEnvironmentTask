@@ -8,13 +8,18 @@ import UserSettingsPage from '../pageobjects/usersettings.page.js';
 import TransactionNewPage from '../pageobjects/transactionnew.page.js';
 import { randomUserName, randomPassword, randomFirstName, randomLastName, randomThreeSymbolsPassword, randomBankName, invalidBankName, randomBankRoutingNumber, invalidBankRoutingNumber, randomBankAccountNumber, invalidBankAccountNumber, invalidEmail, invalidPhoneNumber, randomAmount, randomDescription } from "./../helper/randomvars.js"
 
+import * as dotenv from 'dotenv';
+
+// Load the .env file
+dotenv.config();
+
 const userName = 'Tavares_Barrows';
 const userPassword = 's3cret';
 const userFirstName = 'Arely';
 
 // const userName = process.env.USERNAME;
-// const userPassword = process.env.PASSWORD;
-// const userFirstName = process.env.FIRSTNAME;
+// const userPassword = process.env.USERPASSWORD;
+// const userFirstName = process.env.USERFIRSTNAME;
 
 describe('Login block', () => {
     it('Test case #1-1 Login with valid credentials', async () => {
