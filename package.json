@@ -8,16 +8,17 @@
     "@wdio/local-runner": "^8.24.12",
     "@wdio/mocha-framework": "^8.24.12",
     "@wdio/spec-reporter": "^8.24.12",
-    "cross-env": "^7.0.3"
+    "cross-env": "^7.0.3",
+    "dotenv-run-script": "^0.4.1"
   },
   "scripts": {
-    "test": "wdio run ./wdio.conf.js",
-    "test:chrome": "wdio run ./wdio.chrome.conf.js",
-    "test:firefox": "wdio run ./wdio.firefox.conf.js",
-    "test:development": "cross-env NODE_ENV=development jest",
-    "test:production": "cross-env NODE_ENV=production jest",
-    "test:sample": "cross-env NODE_ENV=test userName=%USERNAME% userPassword=%USERPASSWORD% userFirstName=%USERFIRSTNAME% npx wdio run ./wdio.conf.js",
-    "allure-report": "allure generate --clean allure-results && allure open"
+    "test": "cross-env TESTS_ENV=test npm run config && wdio run ./wdio.conf.js",
+    "test:chrome": "cross-env TESTS_ENV=test npm run config && wdio run ./wdio.chrome.conf.js",
+    "test:firefox": "cross-env TESTS_ENV=test npm run config && wdio run ./wdio.firefox.conf.js",
+    "allure-report": "allure generate --clean allure-results && allure open",
+    "test:prod": "cross-env TESTS_ENV=prod npm run config && wdio run ./wdio.conf.js",
+    "test:develop": "cross-env TESTS_ENV=develop npm run config && wdio run ./wdio.conf.js",
+    "config": "sh -ac 'if test \"$TESTS_ENV\"; then cp environments/env.${TESTS_ENV}.json.template environments/env.json; fi'"
   },
   "dependencies": {
     "allure-commandline": "^2.25.0",

@@ -1,7 +1,4 @@
-// import * as dotenv from 'dotenv';
 
-// // Load the .env file
-// dotenv.config();
 // const allure = require('allure-commandline')
 // import { allure } from 'allure-commandline'
 
@@ -70,7 +67,7 @@ export const config = {
     // Define all options that are relevant for the WebdriverIO instance here
     //
     // Level of logging verbosity: trace | debug | info | warn | error | silent
-    logLevel: 'info',
+    logLevel: 'error',
     //
     // Set specific log levels per logger
     // loggers:
